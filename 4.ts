@@ -2,7 +2,7 @@
  * @Author: Andrew Q
  * @Date: 2022-05-07 22:58:00
  * @LastEditors: Andrew Q
- * @LastEditTime: 2022-05-07 23:18:27
+ * @LastEditTime: 2022-06-15 22:19:53
  * @Description: exclude
  */
 interface Person {
@@ -17,6 +17,12 @@ interface Tony {
 
 // 可选项 Partial
 type T = Partial<Person>
+
+type GT = GPartial<Person>
+
+type GPartial<T> = {
+  [P in keyof T]?: T[P]
+}
 
 // 必选项 Required
 type R = Required<Person>
